@@ -1,10 +1,14 @@
 
-let person = prompt("Please enter your name", "Harry Potter");
+let person = prompt("Please enter your name");
 
 if (person != null) {
 document.getElementById("demo").innerHTML =
 "Hello " + person;
 }
+
+let skor = document.getElementById('skor')
+
+
 
 class start{
 
@@ -41,13 +45,11 @@ class start{
 
        win (){
         
-//  if(localStorage.getItem == ("skor")){
-//     skor.textContent= `${plus}`
-//  }
+
         
         if(this.botOption=="🖐"&& this.playerOption== "✌" ){
            return this.winer = this.playerName
-        
+          
         }
 
         if(this.botOption=="🖐"&& this.playerOption== "✊" ){
@@ -60,10 +62,12 @@ class start{
 
         if(this.botOption=="✌"&& this.playerOption== "✊" ){
            return this.winer = this.playerName
+          
         }
 
         if(this.botOption=="✊"&& this.playerOption=="🖐" ){
            return this.winer = this.playerName
+          
         }
 
         if(this.botOption=="✊"&& this.playerOption== "✌" ){
@@ -95,8 +99,6 @@ const star = new start();
 star.setplayerOption = params
 star.setbotOption = star.botBrain();
  star.win();
-//  console.log(`player: ${star.getplayerOption} Vs bot:${star.getbotOption}`)
-//  console.log("akhir",star.hasil())
 
 
  const ingame = document.getElementById('ingame');
@@ -104,7 +106,7 @@ star.setbotOption = star.botBrain();
  ingame.textContent= "......"
     result.textContent= "......"
  setTimeout(() => {
-    ingame.textContent = `anda${star.getplayerOption} vs bot ${star.getbotOption}`
+    ingame.textContent = `${person}${star.getplayerOption} vs bot ${star.getbotOption}`
 result.textContent = star.hasil();
    }, 200);
 
